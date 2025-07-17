@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4dle</title>
+    <style>
+      body {
+        font-family: monospace;
+        background: #121212;
+        color: #f0f0f0;
+        padding: 2rem;
+      }
+      input[type="text"] {
+        font-size: 1.2rem;
+        padding: 0.5rem;
+        width: 100px;
+        text-transform: lowercase;
+      }
+      button {
+        font-size: 1.1rem;
+        padding: 0.5rem 1rem;
+        margin-left: 0.5rem;
+        background-color: #1e90ff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #1c86ee;
+      }
+      .feedback {
+        margin-top: 1rem;
+      }
+      .guess {
+        white-space: pre;
+        font-family: monospace;
+      }
+      canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        z-index: 9999;
+      }
+      #playAgainBtn {
+        margin-top: 1rem;
+        display: none;
+      }
+      .instructions {
+        background-color: #1a1a1a;
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        margin-bottom: 1rem;
+        line-height: 1.4;
+      }
+      .instructions code {
+        background-color: #2a2a2a;
+        padding: 0.1rem 0.3rem;
+        border-radius: 3px;
+      }
+      .letter-tracker {
+        margin-top: 1rem;
+        background-color: #1a1a1a;
+        padding: 0.5rem;
+        border-radius: 6px;
+        font-size: 0.95rem;
+        display: none;
+      }
+      #kofiContainer {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 10000;
+        width: max-content;
+        pointer-events: auto;
+        visibility: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to <code>4dle</code>!</h1>
+    <div style="margin-top: -0.5rem; margin-bottom: 1rem">
+      <h7>by Grace</h7>
+    </div>
+    <p></p>
+    <div class="instructions">
+      <h2>How to play:</h2>
+      <ul>
+        <li>Guess the 4-letter word - you have infinite tries.</li>
+        <p></p>
+        <li>Each guess gives feedback for each letter:</li>
+        <ul>
+          <li><code>letter</code> → Correct letter in the correct spot</li>
+          <li><code>*</code> → Correct letter, wrong spot</li>
+          <li><code>_</code> → Incorrect letter</li>
+          <p></p>
+        </ul>
+        <li>Try to solve it in as few guesses as possible!</li>
+        <li>
+          Press <strong>Enter</strong> or click <strong>Guess</strong> to submit
+        </li>
+      </ul>
+      <div class="letter-tracker" id="letterTracker">
+        <p>
+          <strong>Letters guessed, not in word:</strong>
+          <span id="absentLetters">(none)</span>
+        </p>
+        <p>
+          <strong>Letters guessed, incorrect position:</strong>
+          <span id="misplacedLetters">(none)</span>
+        </p>
+      </div>
+    </div>
+
+    <div>
+      <input type="text" id="guessInput" maxlength="4" autofocus />
+      <button onclick="submitGuess()">Guess</button>
+    </div>
+    <div class="feedback" id="feedback"></div>
+    <button id="playAgainBtn" onclick="location.reload()">Play Again</button>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="wordlist.js"></script>
+    <script src="4word.js"></script>
+    <script src="lettersguessed.js"></script>
+    <div id="kofiContainer">
+      <script
+        type="text/javascript"
+        src="https://storage.ko-fi.com/cdn/widget/Widget_2.js"
+      ></script>
+      <script>
+        kofiwidget2.init("Support Grace on Ko-fi", "#000000", "M4M11237VE");
+        kofiwidget2.draw("kofiContainer");
+      </script>
+    </div>
+  </body>
+</html>
