@@ -15,9 +15,9 @@ Welcome to **4dle**, a minimalist, text-based Wordle clone that challenges you t
 ## How to Run
 
 ### Easy Way
-Play instantly at: [https://4dle.netlify.app/](https://4dle.netlify.app/)
+Go to [https://4dle.netlify.app/](https://4dle.netlify.app/)
 
-### 💻 Hard Way  
+### Hard Way  
 1. In your terminal of choice, clone the repo:
    ```
    git clone https://github.com/your-username/4dle.git
