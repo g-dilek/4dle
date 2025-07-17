@@ -18,7 +18,7 @@ Welcome to **4dle**, a minimalist, text-based Wordle clone that challenges you t
 Go to [https://4dle.netlify.app/](https://4dle.netlify.app/)
 
 ### Hard Way  
-1. In your terminal of choice, clone the repo:
+1. In your terminal of choice (Windows CMD/Powershell shown below), clone the repo:
    ```
    git clone https://github.com/your-username/4dle.git
    ```
@@ -26,5 +26,8 @@ Go to [https://4dle.netlify.app/](https://4dle.netlify.app/)
    ```
    cd 4dle
    ```
-2. Open 4dle/index.html in your browser.
+3. Open 4dle/index.html in your browser:
+   ```
+   start index.html
+   ```
 4. Have fun!
